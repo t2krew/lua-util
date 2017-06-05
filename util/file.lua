@@ -1,6 +1,12 @@
 require 'os'
 require 'fs'
 require 'paths'
+require 'debug'
+
+-- get current file path
+function get_current_path()
+    return debug.getinfo(2, 'S').source:sub(2);
+end
 
 -- Boolean predicate to determine if a path points to a valid file or directory.
 function is_file(path)
